@@ -1,2 +1,5 @@
 # minimap2
-Program to make spliced long-read alignment among other utilities
+Dockerfile to make spliced long-read alignment among other utilities.
+
+- minimap2: last version
+- Ubuntu version: ubuntu:latest
