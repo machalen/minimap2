@@ -17,8 +17,22 @@ RUN apt-get install --yes git \
     python3 \
     python3-pkg-resources \
     build-essential \
-    zlib1g-dev
+    zlib1g-dev \
+    wget \
+    unzip \
+    bzip2
     
+    
+#Install samtools
+WORKDIR /bin
+RUN wget http://github.com/samtools/samtools/releases/download/1.5/samtools-1.5.tar.bz2
+RUN tar --bzip2 -xf samtools-1.5.tar.bz2
+WORKDIR /bin/samtools-1.5
+RUN ./configure
+RUN make
+RUN rm /bin/samtools-1.5.tar.bz2
+ENV PATH $PATH:/bin/samtools-1.5
+
 #Install minimap2
 WORKDIR /usr/local
 RUN git clone https://github.com/lh3/minimap2
