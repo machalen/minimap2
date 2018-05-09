@@ -17,10 +17,10 @@ RUN apt-get install --yes git \
     python3 \
     python3-pkg-resources \
     build-essential \
-    zlib1g-dev \
-    wget \
-    unzip \
-    bzip2
+    zlib1g-dev ncurses-dev \
+    wget default-jdk default-jre \
+    unzip libncurses5-dev libbz2-dev \
+    bzip2 liblzma-dev
     
     
 #Install samtools
